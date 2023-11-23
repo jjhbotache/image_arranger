@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Image Arranger</title>
+</head>
+<body>
+    <header>
+        <h1>Image Arranger</h1>
+    </header>
+    <div class="gallery">
+        <h2 id="galleryCounter" class="gallery--counter">0</h2>
+        <div class="gallery--pics-container">Add images in the controller ➡️</div>
+    </div>
+    <div class="controller">
+        <h2 class="controller--title">Controller</h2>
+        <hr class="controller--separator">
+        <div class="controller--cols-manager">
+            <span>Cols:</span>
+            <input class="controller--input" type="number" id="" min="1" max="50" value="1" step="2">
+        </div>
+        <span>Topic of the photo</span>
+        <input class="controller--topic" type="text"  value="animals">
+        <button id="addImageBtn" class="btn">Add image</button>
+        <button id="removeImageBtn" class="btn btn__outline">Remove image</button>
+    </div>
+    <footer class="footer">
+        <button onclick="window.footerDialog.open = true" class="footer--btn btn">Show me more!</button>
+        <dialog id="footerDialog" onclick="window.footerDialog.open = false" class="footer--dialog">
+            <div class="dialog-container">
+                <h3 class="footer--title">Welcome to Image Arranger</h3>
+                <p class="footer--intro">
+                    Image Arranger allows you to visually organize images in a gallery. Here's a brief guide to help you get started:
+                </p>
+                <ul class="footer--areas-list">
+                    <li><strong>Image Gallery:</strong> On the right, visualize your images organized in rows and columns.</li>
+                    <li><strong>Column Controller:</strong> Adjust the number of columns to customize the arrangement of your images.</li>
+                    <li><strong>Add Images:</strong> Use the "Add image" button to add new images to the gallery.</li>
+                    <li><strong>Remove Images:</strong> Use the "Remove image" button to remove images from the gallery.</li>
+                    <li><strong>Photo Theme:</strong> Enter the desired theme to label your images.</li>
+                </ul>
+                <p class="footer--outro">Explore and experiment to create your own image arrangement!</p>
+                <span class="footer--description">(Click outside the box to close)</span>
+            </div>
+        </dialog>
+        
+        
+        
+    </footer>
+
+    <script src="main.js"></script>
+    
+</body>
+</html>
