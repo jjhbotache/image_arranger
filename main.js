@@ -1,9 +1,9 @@
-const gallery = document.querySelector('.gallery--pics-container');
+const gallery = document.querySelector('.gallery__pics-container');
 const addImageBtn = document.querySelector('#addImageBtn');
-const galleryCounter = document.querySelector('.gallery--counter');
+const galleryCounter = document.querySelector('.gallery__counter');
 const removeImageBtn = document.querySelector('#removeImageBtn');
-const colsInput = document.querySelector('.controller--input');
-const topicInput = document.querySelector('.controller--topic');
+const colsInput = document.querySelector('.controller__input');
+const topicInput = document.querySelector('.controller__topic');
 
 
 const pics = []
@@ -26,7 +26,7 @@ function updateGallery(newPic) {
     pics.forEach((pic) => {
         const img = document.createElement('img');
         img.src = pic;
-        img.classList.add('gallery--img');
+        img.classList.add('gallery__img');
         gallery.appendChild(img);
     })
 }
