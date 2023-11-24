@@ -39,6 +39,7 @@ img{
         box-shadow .4s ease-in-out,
         background .2s ease-in-out,
         color .2s ease-in-out;
+    @media screen and (width < 768px) {padding: 0;}
 }
 .btn:hover{box-shadow:0 0 .4rem .03rem rgb(144, 238, 144);}
 .btn--outline, .btn:hover{
@@ -130,9 +131,13 @@ header{
     border: lightgreen solid 1px;
     border-radius: 1rem;
     box-sizing: border-box;
+    @media screen and (width < 768px) {gap: 0;}
 }
 .controller__title{
     margin: .2rem 0;
+    @media screen and (width < 768px) {
+        font-size: calc(4vw + .2rem);
+    }
 }
 .controller__cols-manager{
     box-sizing: border-box;
@@ -141,18 +146,23 @@ header{
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    @media screen and (width < 768px) {height: auto;}
 }
 .controller__input{
     font-size: 1.5rem;
     text-align: center;
-    margin: calc(2vw - .5rem);
+    margin: 0 calc(1vw - .5rem);
     border-radius: .5rem;
+    @media screen and (width < 768px) {
+        font-size: calc(2vw + .1rem);
+    }
 }
 .controller__separator{
     width: calc(100% - 2rem);
     height: 1px;
     background-color: lightgreen;
     border: none;
+    @media screen and (width < 1440px) {display: none;}
 }
 .controller__topic{
     box-sizing: border-box;
@@ -162,6 +172,8 @@ header{
     margin: .5rem;
     border-radius: .5rem;
 }
+
+
 
 /* ________________________________________________________________________ */
 .footer{
