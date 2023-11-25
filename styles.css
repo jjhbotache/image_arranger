@@ -17,10 +17,21 @@ body{
     grid-template-columns: minmax(100px, 1fr) minmax(100px, 2fr) minmax(100px, 1fr);
     grid-template-rows: minmax(25px, 50px) minmax(100px, 3fr) minmax(25px, 50px);
     grid-template-areas: 
-        "header header header"
-        "gallery gallery controller"
-        ". footer .";
+    "header header header"
+    "gallery gallery controller"
+    ". footer .";
     ;
+    gap: .5rem;
+    @media (width < 768px) {
+        grid-template-rows: 40px repeat(2,minmax(100px, 1fr)) 40px ;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "header "
+            "gallery "
+            "controller "
+            "footer ";
+        ;
+    }
 }
 img{
     width: 100%;
@@ -30,6 +41,7 @@ img{
 /* ________________________________________________________________________ */
 .btn{
     width: calc(100% - 2rem);
+    max-width: 300px;
     padding: .3rem;
     background: lightgreen ;
     border: none ;
@@ -39,7 +51,6 @@ img{
         box-shadow .4s ease-in-out,
         background .2s ease-in-out,
         color .2s ease-in-out;
-    @media screen and (width < 768px) {padding: 0;}
 }
 .btn:hover{box-shadow:0 0 .4rem .03rem rgb(144, 238, 144);}
 .btn--outline, .btn:hover{
@@ -58,6 +69,9 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: calc(.4rem + 1vw);
+    
+    
 }
 /* ________________________________________________________________________ */
 .gallery{
@@ -66,7 +80,8 @@ header{
     position: relative;
     border: lightgreen solid 1px;
     border-radius: 1rem;
-
+    padding: .8vw;
+    border-right: none;
 }
 .gallery__pics-container{
     box-sizing: border-box;
@@ -75,9 +90,10 @@ header{
     display: grid;
     grid-template-columns: repeat(1,1fr);
     grid-template-rows: repeat(auto-fill, minmax(100px, 1fr));
-    gap: calc(3vw - .5rem);
+    gap: 1vw;
     overflow-y: auto;
-    padding: calc(3vw - 1rem);
+    overflow-x: hidden;
+    padding: 1vw;
     
 }
 .gallery__counter{
@@ -89,9 +105,9 @@ header{
     background: #333;
     color: lightgreen;
     border: lightgreen solid 1px;
-    box-shadow: 0 0 .4rem .05rem lightgreen;
+    box-shadow: 0 0 .4rem .02rem lightgreen;
     border-radius: .4rem;
-    margin: 1rem;
+    margin: 1rem 1.5rem;
 }
 .gallery__pics-container::-webkit-scrollbar{
     width: .3rem;
@@ -100,7 +116,6 @@ header{
 .gallery__pics-container::-webkit-scrollbar-thumb{
     padding: .2rem;
     background-color: lightgreen;
-    outline: #333 solid .4rem;
     border-radius: 999rem;
     
 }
@@ -121,17 +136,12 @@ header{
     grid-area: controller;
     background-color: #333;
     display: flex;
-    gap: 0.5rem;
-    overflow: hidden;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     text-align: center;
-    margin: .5rem;
     border: lightgreen solid 1px;
     border-radius: 1rem;
-    box-sizing: border-box;
-    @media screen and (width < 768px) {gap: 0;}
 }
 .controller__title{
     margin: .2rem 0;
@@ -153,9 +163,6 @@ header{
     text-align: center;
     margin: 0 calc(1vw - .5rem);
     border-radius: .5rem;
-    @media screen and (width < 768px) {
-        font-size: calc(2vw + .1rem);
-    }
 }
 .controller__separator{
     width: calc(100% - 2rem);
