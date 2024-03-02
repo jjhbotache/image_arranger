@@ -1,7 +1,7 @@
 # Image Arranger
 
 ## Description
-Image Arranger is a web application that allows users to add and visually organize images in a gallery. The application is built using HTML, CSS, and JavaScript.
+Image Arranger is a web application that allows users to add and visually organize images in a gallery. The application is built using HTML, CSS, and JavaScript. The page uses the [Pixabay api](https://pixabay.com/api/docs/) to get imgs.
 
 ## Page Explanation
 - **Image Gallery**: This is where the images are displayed. Users can visually organize their images in this section.
